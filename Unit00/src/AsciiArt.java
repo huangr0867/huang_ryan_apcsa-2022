@@ -11,13 +11,13 @@ public class AsciiArt
 	public static void main ( String[] args )
 	{
 		System.out.println("Ryan Huang \n\n" );
-		System.out.println("What type of ANIMAL YOU WILL DRAW" );
+		System.out.println("Cat" );
 		System.out.println("\n\n\n\n" );
 
-		System.out.println("                /\\                " );
-		System.out.println("               /  \\               " );
-		System.out.println("              /    \\              " );
-		System.out.println("             [------]             " );
+		System.out.println("                /]   /]           " );
+		System.out.println("               [[]  []]             " );
+		System.out.println("               [  []  ]           " );
+		System.out.println("               [------]             " );
 		//add other output
 
 		System.out.println(" \n\n\n\nHelpFul Hints" );
