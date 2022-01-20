@@ -29,6 +29,7 @@ public class Distance
 
 	public void calcDistance()
 	{
+		
 	}
 	
 	public double getDistance()
