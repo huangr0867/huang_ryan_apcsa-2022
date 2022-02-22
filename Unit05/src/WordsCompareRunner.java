@@ -46,6 +46,9 @@ public class WordsCompareRunner
 	   a.setWords("funnel", "fun");
 	   a.compare();
 	   out.println(a);
+	   
+	   
+	  
 
 	}
 }
