@@ -71,7 +71,6 @@ public class Shuffler {
 		}
 
 		k = 1;
-
 		for (int j = (values.length + 1) / 2; j < values.length; j++) {
 			shuffled[k] = values[j];
 			k = k + 2;
