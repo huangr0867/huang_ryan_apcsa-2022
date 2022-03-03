@@ -19,13 +19,15 @@ public class ToyStore
 
 	public void loadToys( String toys )
 	{
-		for (String name : toys.split(" ")) {
-			Toy tempToy = getThatToy(name);
-				if(tempToy == null) {
+		String[] toyArray = toys.split(" ");
+		
+		for (String name : toyArray) {
+			Toy aToy = getThatToy(name);
+				if(aToy == null) {
 					toyList.add(new Toy(name));
 				}
 				else {
-				tempToy.setCount(tempToy.getCount() + 1);
+				aToy.setCount(aToy.getCount() + 1);
 				}
 		}
 	}
