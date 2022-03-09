@@ -61,6 +61,7 @@ public class ToyStore
   		ArrayList<Toy> sortList = new ArrayList<Toy>();
   		
   		int index = 0;
+  		
   		for (int i = toyList.size(); i > 0; i--) {
   			sortList.add(new Toy(getMostFrequentToy()));
   			sortList.get(index).setCount((getThatToy(getMostFrequentToy()).getCount()));
