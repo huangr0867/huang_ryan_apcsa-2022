@@ -59,4 +59,3 @@ class BlinkyBall extends Ball
 
 
    }
-}
