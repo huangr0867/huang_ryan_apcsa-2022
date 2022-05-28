@@ -147,6 +147,35 @@ public class PictureTester
     swan2.edgeDetection2(10);
     swan2.explore();
   }
+  
+  public static void testEncode()
+  {
+	Picture beach = new Picture("beach.jpg");
+	Picture msg = new Picture("msg.jpg");
+	beach.explore();
+	msg.explore();
+	beach.encode(msg);
+	beach.explore();
+	  
+//	  Picture beach = new Picture( "beach.jpg" );
+//      beach.explore();
+//      Picture message = new Picture( "msg.jpg" );
+//      beach.encode( message );
+//      beach.explore();
+//      Picture decoded = beach.decode();
+//      decoded.explore();
+  }
+  
+  public static void testDecode()
+  {
+	Picture beach = new Picture("beach.jpg");
+	Picture msg = new Picture("apple_icon.jpg");
+	beach.explore();
+	msg.explore();
+	beach.encode(msg);
+	beach.explore();
+	beach.decode().explore();
+  }
 
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -155,6 +184,8 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
+	testEncode();
+	//testDecode();
     //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
@@ -175,7 +206,7 @@ public class PictureTester
     //testMyCollage();
     //testCopy();
     //testEdgeDetection();
-    testEdgeDetection2();
+    //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);

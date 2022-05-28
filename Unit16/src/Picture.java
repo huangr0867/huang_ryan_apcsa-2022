@@ -500,6 +500,90 @@ public class Picture extends SimplePicture
 			}
 		}
 	}
+	
+	/** Hide a black and white message in the current
+	  * picture by changing the red to even and then
+	  * setting it to odd if the message pixel is black
+	  * @param messagePict the picture with a message
+	  */
+	  public void encode(Picture messagePict)
+	  {
+		  Pixel[][] messagePixels = messagePict.getPixels2D();
+		  Pixel[][] currPixels = this.getPixels2D();
+		  Pixel currPixel = null;
+		  Pixel messagePixel = null;
+		  for (int row = 0; row < this.getHeight(); row++)
+		  {
+			  for (int col = 0; col < this.getWidth(); col++)
+			  {
+				  // if the current pixel red is odd make it even
+				  currPixel = currPixels[row][col];
+				  messagePixel = messagePixels[row][col];
+				  
+				  if (currPixel.getRed() % 5 != 0) {
+					  currPixel.setRed(currPixel.getRed() + 4);
+				  }
+				  else {
+					  if (currPixel.getRed() % 5 == 0) {
+						  currPixel.setRed(currPixel.getRed() + 4);
+					    }
+				  }
+				  if (currPixel.getGreen() % 5 != 0) {
+					  currPixel.setGreen(currPixel.getGreen() + 4);
+				  }
+				  else {
+					  if (currPixel.getGreen() % 5 == 0) {
+						    currPixel.setGreen(currPixel.getGreen() + 4);
+					  }
+				  }
+				  if (currPixel.getBlue() % 5 != 0) {
+					  		currPixel.setBlue(currPixel.getBlue() + 4);
+				  }
+				  else {
+				
+					  if (currPixel.getBlue() % 5 == 0) {
+						  currPixel.setBlue(currPixel.getBlue() + 4);
+					  }
+				  }
+
+			  }
+		  }
+	  }
+	  
+	  /**
+	  * Method to decode a message hidden in the
+	  * red value of the current picture
+	  * @return the picture with the hidden message
+	  */
+	  public Picture decode()
+	  {
+		  Pixel[][] pixels = this.getPixels2D();
+		  int height = this.getHeight();
+		  int width = this.getWidth();
+		  Pixel currPixel = null;
+
+		  Pixel messagePixel = null;
+		  Picture messagePicture = new Picture(height,width);
+		  Pixel[][] messagePixels = messagePicture.getPixels2D();
+		  for (int row = 0; row < this.getHeight(); row++)
+		  {
+			  for (int col = 0; col < this.getWidth(); col++)
+			  {
+				  currPixel = pixels[row][col];
+				  messagePixel = messagePixels[row][col];
+				  
+				  if (currPixel.getRed() % 5 == 0)
+					  if (currPixel.getGreen() % 5 == 0)
+						  if (currPixel.getBlue() % 5 == 0)
+							  messagePixel.setColor(Color.BLACK);
+				  
+			  }
+		  }
+		  return messagePicture;
+	  }
+
+	
+	
 	/*
 	 * Main method for testing - each class in Java can have a main method
 	 */
